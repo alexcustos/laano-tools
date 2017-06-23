@@ -1,0 +1,12 @@
+[SERVER]
+SYNC_DIR = /.laano_sync
+DEFAULT_HOST = https://
+DEFAULT_LOGIN = 
+DEFAULT_PASSWORD = 
+DEFAULT_ROOT = /remote.php/webdav
+
+[APP]
+HOST = 127.0.0.1
+PORT = 8000
+DEBUG = 0
+RELOADER = 0

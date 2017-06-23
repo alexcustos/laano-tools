@@ -1,0 +1,6 @@
+uploader/logs/
+uploader/run/
+uploader/src/.ropeproject/
+uploader/src/session/
+uploader/src/config.ini
+venv/

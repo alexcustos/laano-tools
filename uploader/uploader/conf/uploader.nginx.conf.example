@@ -1,0 +1,22 @@
+server {
+    set $laano_uploader_home "###PATH_TO###/uploader";
+
+	listen ###SERVER_IP###:80 default_server;
+
+    server_name ###SERVER_NAME###;
+	charset utf-8;
+
+	access_log /var/log/nginx/###SERVER_NAME###_access_log main;
+	error_log /var/log/nginx/###SERVER_NAME###_error_log;
+
+    location /static {
+        alias $laano_uploader_home/src/static;
+    }
+    location /robots.txt {
+        alias $laano_uploader_home/src/robots.txt;
+    }
+    location / {
+        uwsgi_pass unix:$laano_uploader_home/run/uwsgi.socket;
+        include /etc/nginx/uwsgi_params;
+	}
+}
